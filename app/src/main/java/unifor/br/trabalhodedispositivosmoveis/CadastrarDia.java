@@ -8,16 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Configuracao.OnFragmentInteractionListener} interface
+ * {@link CadastrarDia.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Configuracao#newInstance} factory method to
+ * Use the {@link CadastrarDia#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Configuracao extends Fragment {
+public class CadastrarDia extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -29,7 +28,7 @@ public class Configuracao extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public Configuracao() {
+    public CadastrarDia() {
         // Required empty public constructor
     }
 
@@ -39,11 +38,11 @@ public class Configuracao extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Configuracao.
+     * @return A new instance of fragment CasdastrarDia.
      */
     // TODO: Rename and change types and number of parameters
-    public static Configuracao newInstance(String param1, String param2) {
-        Configuracao fragment = new Configuracao();
+    public static CadastrarDia newInstance(String param1, String param2) {
+        CadastrarDia fragment = new CadastrarDia();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -64,8 +63,7 @@ public class Configuracao extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
-        return inflater.inflate(R.layout.fragment_configuracao, container, false);
+        return inflater.inflate(R.layout.fragment_cadastrar_dia, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

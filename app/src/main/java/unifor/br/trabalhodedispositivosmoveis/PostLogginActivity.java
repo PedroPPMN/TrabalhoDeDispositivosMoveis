@@ -53,16 +53,6 @@ public class PostLogginActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
     }
 
 
@@ -137,7 +127,19 @@ public class PostLogginActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            switch (position){
+                case 0:
+                    CadastrarDia cadastrarDia = new CadastrarDia();
+                    return cadastrarDia;
+                case 1:
+                    CalendarFragment calendarFragment = new CalendarFragment();
+                    return calendarFragment;
+                case 2:
+                    Configuracao configuracao = new Configuracao();
+                    return configuracao;
+                default:
+                    return  null;
+            }
         }
 
         @Override
@@ -150,11 +152,11 @@ public class PostLogginActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "SECTION 1";
+                    return "Cadastrar Dia";
                 case 1:
-                    return "SECTION 2";
+                    return "Calendário";
                 case 2:
-                    return "SECTION 3";
+                    return "Configuração";
             }
             return null;
         }
