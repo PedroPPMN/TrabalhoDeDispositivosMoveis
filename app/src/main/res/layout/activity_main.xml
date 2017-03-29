@@ -38,7 +38,6 @@
         android:layout_below="@+id/editText2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="21dp"
-        android:onClick="LogIn"
         android:text="LogIn" />
 
 

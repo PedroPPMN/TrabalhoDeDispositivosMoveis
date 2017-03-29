@@ -19,7 +19,7 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
-public class PostLogginActivity extends AppCompatActivity {
+public class CalendarMainActivity extends AppCompatActivity {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -39,7 +39,7 @@ public class PostLogginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_post_loggin);
+        setContentView(R.layout.activity_calendar_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -53,13 +53,23 @@ public class PostLogginActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_post_loggin, menu);
+        getMenuInflater().inflate(R.menu.menu_calendar_main, menu);
         return true;
     }
 
@@ -106,7 +116,7 @@ public class PostLogginActivity extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_post_loggin, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_calendar_main, container, false);
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
             textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
@@ -127,19 +137,7 @@ public class PostLogginActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            switch (position){
-                case 0:
-                    CadastrarDia cadastrarDia = new CadastrarDia();
-                    return cadastrarDia;
-                case 1:
-                    CalendarFragment calendarFragment = new CalendarFragment();
-                    return calendarFragment;
-                case 2:
-                    Configuracao configuracao = new Configuracao();
-                    return configuracao;
-                default:
-                    return  null;
-            }
+            return PlaceholderFragment.newInstance(position + 1);
         }
 
         @Override
@@ -152,11 +150,11 @@ public class PostLogginActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "Cadastrar Dia";
+                    return "SECTION 1";
                 case 1:
-                    return "Calendário";
+                    return "SECTION 2";
                 case 2:
-                    return "Configuração";
+                    return "SECTION 3";
             }
             return null;
         }

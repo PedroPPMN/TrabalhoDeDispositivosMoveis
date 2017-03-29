@@ -16,9 +16,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PostLogginActivity"
-            android:label="@string/title_activity_post_loggin"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:name=".CalendarMainActivity"
+            android:label="@string/title_activity_calendar_main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".VendaActivity" />
+        <activity android:name=".ListaDeClientes" />
+        <activity android:name=".Produto" />
+        <activity android:name=".AdicionarCliente"></activity>
     </application>
 
 </manifest>
